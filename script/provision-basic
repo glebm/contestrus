@@ -34,8 +34,9 @@ apt-get install -y \
   sqlite3 \
   sudo \
   vim \
-  zlib1g-dev \
-  linux-image-extra-`uname -r`
+  zlib1g-dev
+
+# linux-image-extra-`uname -r`
 
 ## Create the app user and the /app directory
 

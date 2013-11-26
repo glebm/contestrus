@@ -18,5 +18,10 @@ Vagrant.configure("2") do |config|
     virtualbox.customize ["modifyvm", :id, "--memory", "1024", "--ioapic", "on"]
   end
 
+  # via https://github.com/yshahin/vagrant-parallels
+  config.vm.provider 'parallels' do |parallels, override|
+    override.vm.box_url = 'https://s3-eu-west-1.amazonaws.com/vagrant-parallels/devbox.box'
+  end
+
   config.vm.provision :shell, :path => "script/provision-development"
 end
