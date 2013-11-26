@@ -36,6 +36,7 @@ apt-get install -y \
   vim \
   zlib1g-dev
 
+# allow install to continue even if these packages are not found:
 packages=(linux-image-extra-`uname -r`)
 for package in "${packages[@]}"; do
   exists=(apt-cache policy $package)
