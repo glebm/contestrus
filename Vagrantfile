@@ -28,6 +28,6 @@ Vagrant.configure("2") do |config|
   config.vm.provider 'parallels' do |parallels, override|
     # this is an Ubuntu 12.04 LTS (precise), provided by vagrant-parallels:
     override.vm.box_url = 'https://s3-eu-west-1.amazonaws.com/vagrant-parallels/devbox.box'
-    override.vm.provision :shell, :path => "script/provision-development-precise"
+    override.vm.provision *default_provision
   end
 end
