@@ -36,7 +36,14 @@ apt-get install -y \
   vim \
   zlib1g-dev
 
-# linux-image-extra-`uname -r`
+packages=(linux-image-extra-`uname -r`)
+for package in "${packages[@]}"; do
+  exists=(apt-cache policy $package)
+  if [ -n $exists ]; then
+    apt-get install -y $package
+  fi
+done
+
 
 ## Create the app user and the /app directory
 
